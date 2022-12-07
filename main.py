@@ -12,8 +12,6 @@ root
 res = optimize.minimize(evaluate_ackley, initial_guess, method='Nelder-Mead', tol=1e-6)
 
 
-
-
 evaluate_ackley(0,1)
 initial_guess[1]
 
