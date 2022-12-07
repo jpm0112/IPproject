@@ -1,12 +1,16 @@
 import numpy.linalg as la
+import numpy as np
 
 
-def newton(function, d_function, dd_function, initial_guesses):
-
-    for i in range(1,10000):
+def newton(function, fprime, fprime2, initial_guesses, steps):
+    i = 0
+    while i <steps:
         x = initial_guesses[-1]
-        s = la.solve(dd_function(x), d_function(x))
+        s = la.solve(fprime2(x), fprime(x))
         next_guess = x - s
-        print(function(next_guess), next_guess)
         initial_guesses.append(next_guess)
-    return (function(next_guess))
+        i = i +1
+    return (function(initial_guesses[-1]))
+
+
+
