@@ -8,6 +8,5 @@ def newton(function, d_function, dd_function, initial_guesses):
         s = la.solve(dd_function(x), d_function(x))
         next_guess = x - s
         print(function(next_guess), next_guess)
-
         initial_guesses.append(next_guess)
-
+    return (function(next_guess))
