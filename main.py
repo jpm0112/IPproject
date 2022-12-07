@@ -3,29 +3,33 @@ from scipy import optimize
 from problems import *
 from functions import *
 import numpy as np
-import numpy.linalg as la
 
 
+fun = evaluate_ackley
 initial_guesses = [np.array([0.00011, 0.0111])]
-fprime = lambda x: optimize.approx_fprime(x, evaluate_ackley, 0.0001)
+fprime = lambda x: optimize.approx_fprime(x, fun, 0.0001)
 fprime2 = lambda x: optimize.approx_fprime(x, fprime, 0.0001)
 
-solution = newton(evaluate_ackley, fprime, fprime2, initial_guesses, 200)
+solution = newton(fun, fprime, fprime2, initial_guesses, 200)
 solution
 
 
-i = 0
-while i <50:
-        x = initial_guesses[-1]
-        s = la.solve(fprime2(x), fprime(x))
-        print(s)
-        next_guess = x - s
-        #print(function(next_guess), next_guess)
-        initial_guesses.append(next_guess)
-        i = i +1
-initial_guesses[-1]
-evaluate_ackley(initial_guesses[-1])
+fun = evaluate_bona
+initial_guesses = [np.array([0.00011, 0.0111])]
+fprime = lambda x: optimize.approx_fprime(x, fun, 0.0001)
+fprime2 = lambda x: optimize.approx_fprime(x, fprime, 0.0001)
 
+solution = newton(fun, fprime, fprime2, initial_guesses, 200)
+solution
+
+
+fun = evaluate_threecamel
+initial_guesses = [np.array([0.00011, 0.0111])]
+fprime = lambda x: optimize.approx_fprime(x, fun, 0.0001)
+fprime2 = lambda x: optimize.approx_fprime(x, fprime, 0.0001)
+
+solution = newton(fun, fprime, fprime2, initial_guesses, 200)
+solution
 
 
 
