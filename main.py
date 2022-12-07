@@ -1,1 +1,15 @@
-print('hola')
+
+import scipy
+from problems import *
+
+
+
+
+
+
+
+
+
+
+
+
