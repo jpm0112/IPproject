@@ -10,7 +10,7 @@ def evaluate_ackley(list):
     z = z1 + z2 + np.exp(1) + 20
     return(z)
 
-#Definition Bohachevsky Function 
+#Definition Bohachevsky Function
 
 def evaluate_bona(x):
     return x[0]**2+2*(x[1]**2)-0.3*np.cos(3*np.pi*x[0])-0.4*np.cos(4*np.pi*x[1])+0.7
