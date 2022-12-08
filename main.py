@@ -23,11 +23,11 @@ res = newton(fun, initial_guesses, 200)
 res[3]
 
 
-
+res[0]
 guesses = res[3]
 
 import matplotlib.pyplot as plt
-xmesh, ymesh = np.mgrid[-1:1.5:50j,-1:1.5:50j]
+xmesh, ymesh = np.mgrid[-1:1:50j,-1:1:50j]
 fmesh = fun(np.array([xmesh, ymesh]))
 
 plt.axis("equal")
