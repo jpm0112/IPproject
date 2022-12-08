@@ -14,7 +14,8 @@ def newton(fun, initial_guesses, steps):
         next_guess = x - s
         initial_guesses.append(next_guess)
         i = i +1
-    return (initial_guesses[-1], fun(initial_guesses[-1]), time.time() - start_time)
+        print(next_guess)
+    return (initial_guesses[-1], fun(initial_guesses[-1]), time.time() - start_time, initial_guesses)
 
 
 
